@@ -12,7 +12,7 @@ import com.skt.Tmap.TMapPolyLine;
 import com.skt.Tmap.TMapView;
 
 /* Develop By Jinuk-Ha */
-public class MainActivity extends AppCompatActivity {
+public class MapActivity extends AppCompatActivity {
 
     TMapPoint tMapPointStart = new TMapPoint(37.570841, 126.985302); // SKT타워(출발지)
     TMapPoint tMapPointEnd = new TMapPoint(37.551135, 126.988205); // N서울타워(목적지)
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_map);
         LinearLayout linearLayoutTmap = findViewById(R.id.linearLayoutTmap);
 
         // TMap 지도 생성 관련 변수
