@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+/* Develop By Jeon Se Yeon */
 public class SY_activity_popup extends AppCompatActivity {
     final Context context = this;
     @Override
