@@ -2,13 +2,12 @@ package cs.inhatc.khac.khac_where_is_leisure;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 /*Dvelop By KimAYoung*/
-public class AY_MainPage extends AppCompatActivity implements View.OnClickListener{
+public class AY_MainPage extends JU_TotalActivity implements View.OnClickListener{
 
     private Button btnTrip, btnMypage, btnAfterTrip;
     private JU_PermissionCall PC;

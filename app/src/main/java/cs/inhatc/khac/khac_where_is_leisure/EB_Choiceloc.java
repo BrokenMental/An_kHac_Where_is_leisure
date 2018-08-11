@@ -2,7 +2,6 @@ package cs.inhatc.khac.khac_where_is_leisure;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -12,7 +11,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 /* Develop By Eunbee-Shin */
-public class EB_Choiceloc extends AppCompatActivity {
+public class EB_Choiceloc extends JU_TotalActivity {
 
     ArrayAdapter<CharSequence> ad_spin1, ad_spin2;
     String choice_do="";
@@ -24,6 +23,7 @@ public class EB_Choiceloc extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eb_choiceloc);
+        actList.add(this);
 
         final Spinner spin1 = findViewById(R.id.spinner2);
         final Spinner spin2 = findViewById(R.id.spinner);

@@ -71,18 +71,84 @@
             </LinearLayout>
 
 
-            <LinearLayout
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="393dp"
-                android:orientation="vertical">
+                android:layout_height="453dp"
+                android:layout_weight="1">
 
-                <ListView
-                    android:id="@+id/list_main"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:choiceMode="multipleChoice" />
+                    android:orientation="vertical">
 
-            </LinearLayout>
+                    <CheckBox
+                        android:id="@+id/chkBtn1"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:onClick="Popup1"
+                        android:text="사라오름" />
+                    1
+
+                    <CheckBox
+                        android:id="@+id/chkBtn2"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:onClick="Popup2"
+                        android:text="넥슨 컴퓨터 박물관" />
+
+                    <CheckBox
+                        android:id="@+id/chkBtn3"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:onClick="Popup3"
+                        android:text="성산일출봉" />
+
+                    <CheckBox
+                        android:id="@+id/chkBtn4"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:onClick="Popup4"
+                        android:text="정방폭포" />
+
+                    <CheckBox
+                        android:id="@+id/chkBtn5"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:onClick="Popup5"
+                        android:text="러브랜드" />
+
+                    <CheckBox
+                        android:id="@+id/chkBtn6"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:onClick="Popup6"
+                        android:text="최남단 체험 감귤농장" />
+
+                    <CheckBox
+                        android:id="@+id/chkBtn7"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:onClick="Popup7"
+                        android:text="소인국 테마파크" />
+
+                    <CheckBox
+                        android:id="@+id/chkBtn8"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:onClick="Popup8"
+                        android:text="휴애리 생활자연 공원" />
+
+                </LinearLayout>
+            </ScrollView>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -98,7 +164,7 @@
                     android:background="#6EAABE "
                     android:text="다음"
                     android:textSize="18sp"
-                    android:onClick="btnOk"/>
+                    android:onClick="btnOk" />
             </LinearLayout>
 
 

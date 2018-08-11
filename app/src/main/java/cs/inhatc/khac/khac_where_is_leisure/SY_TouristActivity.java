@@ -5,61 +5,197 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ImageButton;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 /* Develop By Jeon Se Yeon */
-public class SY_TouristActivity extends AppCompatActivity {
-    private ListView listview;
-    private CustomChoiceListViewAdapter adapter;
+public class SY_TouristActivity extends JU_TotalActivity {
     final Context context = this;
-    private ArrayList<SY_ListViewItem> listViewItemSYList = new ArrayList<SY_ListViewItem>();
+    CheckBox checkBox1;
+    CheckBox checkBox2;
+    CheckBox checkBox3;
+    CheckBox checkBox4;
+    CheckBox checkBox5;
+    CheckBox checkBox6;
+    CheckBox checkBox7;
+    CheckBox checkBox8;
+    Button btnBack;
 
     /*앱이 실행됬을 때*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sy_tourist);
+        actList.add(this);
 
-        // Adapter 생성
-        adapter = new CustomChoiceListViewAdapter();
+        btnBack = findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
-        // 리스트뷰 참조 및 Adapter달기
-        listview = (ListView) findViewById(R.id.list_main);
-        listview.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-        listview.setAdapter(adapter);
-
-        //리스트 추가
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.what),
-                "사라오름");
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.what),
-                "새별오름");
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.what),
-                "성산일출봉");
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.what),
-                "정방폭포");
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.what),
-                "러브랜드");
-
+        checkBox1 = (CheckBox) findViewById(R.id.chkBtn1);
+        checkBox2 = (CheckBox) findViewById(R.id.chkBtn2);
+        checkBox3 = (CheckBox) findViewById(R.id.chkBtn3);
+        checkBox4 = (CheckBox) findViewById(R.id.chkBtn4);
+        checkBox5 = (CheckBox) findViewById(R.id.chkBtn5);
+        checkBox6 = (CheckBox) findViewById(R.id.chkBtn6);
+        checkBox7 = (CheckBox) findViewById(R.id.chkBtn7);
+        checkBox8 = (CheckBox) findViewById(R.id.chkBtn8);
     }
 
-   /* 이미지 버튼을 클릭했을 때 -> 팝업*/
-    public void Popup(View v) {
+    /* 이미지 버튼을 클릭했을 때 -> 팝업*/
+    public void Popup1(View v) {
+        String tourName = "사라오름";
 
+        Integer imgTour = R.drawable.sara;
+        String tourExplain = "노루떼가 뛰어노는 모습이 한 폭의 그림 같은 곳";
+        Integer imgOther1 = R.drawable.seoyeon;
+        String txtOther = "서연의 집: \n" +
+                "넓은 창 밖으로 바다가 보이는 카페. 건축학개론 촬영지로 더 유명한 카페. 납뜩이 머핀, 스토리텔링 떡 등 독특한 이름의 메뉴들이 인기 메뉴";
+        Integer imgOther2 = R.drawable.suguk;
+        String txtOther2 = "휴애리 여름 수국 축제: \n" +
+                "먹거리 - 솜사탕, 흑돼지빵, 소시지 \n" +
+                "상철체험프로그램 - 동물먹이주기체험(산토끼, 흑염소, 산양, 염소, 말 등), 흑돼지야놀자(흑돼지쇼), 승마체험, 야생화 자연 학습체험, 전통놀이체험(돌탑쌓기, 투호던지기, 굴렁쇠 체험 등)";
+        if (checkBox1.isChecked()) {
+            Popups(tourName, imgTour, tourExplain, imgOther1, txtOther, imgOther2, txtOther2);
+        }
+    }
+
+    public void Popup2(View v) {
+        String tourName = "넥슨 컴퓨터 박물관";
+
+        Integer imgTour = R.drawable.nexon;
+        String tourExplain = "디지털과 교육, 예술을 결합하여 새로운 문화를 창출하고 이를 바탕으로 지역사회와 교류하고 상생하는 사회교육기관";
+        Integer imgOther1 = R.drawable.noodle;
+        String txtOther = "자매국수: \n" +
+                "육지와 차별화 된 제주도의 향토 음식인 고기국수가 인기 메뉴 \n" +
+                "2013년 제주대학교 축제 때 한 코너를 맡게 되며 시작 된 인연으로 제주대학교에는 자매국수 장학금이 있음";
+        Integer imgOther2 = R.drawable.seongeub;
+        String txtOther2 = "제주성읍마을 전통민속재연축제 2018: \n" +
+                "출베기(꼴베기)공연 및 체험, 달구질(달궈질)공연 및 체험, 조밭볼리기(조밭다지기)공연 및 체험, 검질메기(김메기)공연 및 체험" +
+                "마당질(도리깨질)공연 및 체험, 남방애(절구)찧기 공연 및 체험, 고래골기(맷돌갈기)공연 및 체험\n";
+        if (checkBox2.isChecked()) {
+            Popups(tourName, imgTour, tourExplain, imgOther1, txtOther, imgOther2, txtOther2);
+        }
+    }
+
+    public void Popup3(View v) {
+        String tourName = "성산일출봉";
+
+        Integer imgTour = R.drawable.seongsan;
+        String tourExplain = "바다위에 우뚝 솟아난 수성화산·유네스코 세계자연유산";
+        Integer imgOther1 = R.drawable.seoyeon;
+        String txtOther = "서연의 집: \n" +
+                "넓은 창 밖으로 바다가 보이는 카페. 건축학개론 촬영지로 더 유명한 카페. 납뜩이 머핀, 스토리텔링 떡 등 독특한 이름의 메뉴들이 인기 메뉴";
+        Integer imgOther2 = R.drawable.suguk;
+        String txtOther2 = "휴애리 여름 수국 축제: \n" +
+                "먹거리 - 솜사탕, 흑돼지빵, 소시지 \n" +
+                "상철체험프로그램 - 동물먹이주기체험(산토끼, 흑염소, 산양, 염소, 말 등), 흑돼지야놀자(흑돼지쇼), 승마체험, 야생화 자연 학습체험, 전통놀이체험(돌탑쌓기, 투호던지기, 굴렁쇠 체험 등)";
+        if (checkBox3.isChecked()) {
+            Popups(tourName, imgTour, tourExplain, imgOther1, txtOther, imgOther2, txtOther2);
+        }
+    }
+
+    public void Popup4(View v) {
+        String tourName = "정방폭포";
+
+        Integer imgTour = R.drawable.jeongbang;
+        String tourExplain = "높은곳에서 바다로 떨어지는 물줄기의 시원함 · 명승 제43호 · 올레6코스";
+        Integer imgOther1 = R.drawable.seoyeon;
+        String txtOther = "서연의 집: \n" +
+                "넓은 창 밖으로 바다가 보이는 카페. 건축학개론 촬영지로 더 유명한 카페. 납뜩이 머핀, 스토리텔링 떡 등 독특한 이름의 메뉴들이 인기 메뉴";
+        Integer imgOther2 = R.drawable.suguk;
+        String txtOther2 = "휴애리 여름 수국 축제: \n" +
+                "먹거리 - 솜사탕, 흑돼지빵, 소시지 \n" +
+                "상철체험프로그램 - 동물먹이주기체험(산토끼, 흑염소, 산양, 염소, 말 등), 흑돼지야놀자(흑돼지쇼), 승마체험, 야생화 자연 학습체험, 전통놀이체험(돌탑쌓기, 투호던지기, 굴렁쇠 체험 등)";
+        if (checkBox4.isChecked()) {
+            Popups(tourName, imgTour, tourExplain, imgOther1, txtOther, imgOther2, txtOther2);
+        }
+    }
+
+    public void Popup5(View v) {
+        String tourName = "러브랜드";
+
+        Integer imgTour = R.drawable.love;
+        String tourExplain = "19금 박물관 야경이 좋음";
+        Integer imgOther1 = R.drawable.seoyeon;
+        String txtOther = "서연의 집: \n" +
+                "넓은 창 밖으로 바다가 보이는 카페. 건축학개론 촬영지로 더 유명한 카페. 납뜩이 머핀, 스토리텔링 떡 등 독특한 이름의 메뉴들이 인기 메뉴";
+        Integer imgOther2 = R.drawable.suguk;
+        String txtOther2 = "휴애리 여름 수국 축제: \n" +
+                "먹거리 - 솜사탕, 흑돼지빵, 소시지 \n" +
+                "상철체험프로그램 - 동물먹이주기체험(산토끼, 흑염소, 산양, 염소, 말 등), 흑돼지야놀자(흑돼지쇼), 승마체험, 야생화 자연 학습체험, 전통놀이체험(돌탑쌓기, 투호던지기, 굴렁쇠 체험 등)";
+        if (checkBox5.isChecked()) {
+            Popups(tourName, imgTour, tourExplain, imgOther1, txtOther, imgOther2, txtOther2);
+        }
+    }
+
+    public void Popup6(View v) {
+        String tourName = "최남단 체험 감귤농장";
+
+        Integer imgTour = R.drawable.choenamdan;
+        String tourExplain = "살아있는 제주농촌을 체험할 수 있는 농장";
+        Integer imgOther1 = R.drawable.sushi;
+        String txtOther = "초밥군 커피씨: \n" +
+                "떠오르는 제주도 여행시 꼭 먹어야 할 음식인 용초밥이 주 메뉴이자 인기 메뉴. \n" +
+                "용초밥은 일반 작은 스시와 다르게 물고기 한마리가 통째로 올라가 있음 거품 위에 도미를 그려주는 생선라떼 또한 인기 메뉴";
+        Integer imgOther2 = R.drawable.heobeu;
+        String txtOther2 = "제주 허브동산 “별빛놀이: \n" +
+                "허브와 개구쟁이들, 3D 멀티미디어쇼, 황금족욕 체험, 비누만들기 체험, 그 외 각종 체험";
+        if (checkBox6.isChecked()) {
+            Popups(tourName, imgTour, tourExplain, imgOther1, txtOther, imgOther2, txtOther2);
+        }
+    }
+
+
+    public void Popup7(View v) {
+        String tourName = "휴애리 생활자연 공원";
+
+        Integer imgTour = R.drawable.hyuaeli;
+        String tourExplain = "자연속 동·식물들과 교감이 있는 체험형 자연생활공원";
+        Integer imgOther1 = R.drawable.seoyeon;
+        String txtOther = "서연의 집: \n" +
+                "넓은 창 밖으로 바다가 보이는 카페. 건축학개론 촬영지로 더 유명한 카페. 납뜩이 머핀, 스토리텔링 떡 등 독특한 이름의 메뉴들이 인기 메뉴";
+        Integer imgOther2 = R.drawable.suguk;
+        String txtOther2 = "휴애리 여름 수국 축제: \n" +
+                "먹거리 - 솜사탕, 흑돼지빵, 소시지 \n" +
+                "상철체험프로그램 - 동물먹이주기체험(산토끼, 흑염소, 산양, 염소, 말 등), 흑돼지야놀자(흑돼지쇼), 승마체험, 야생화 자연 학습체험, 전통놀이체험(돌탑쌓기, 투호던지기, 굴렁쇠 체험 등)";
+        if (checkBox7.isChecked()) {
+            Popups(tourName, imgTour, tourExplain, imgOther1, txtOther, imgOther2, txtOther2);
+        }
+    }
+
+    public void Popup8(View v) {
+        String tourName = "소인국 테마파크";
+
+        Integer imgTour = R.drawable.soingug;
+        String tourExplain = "세계 각국의 유명건축물을 한번에 볼 수 있는 테마공원";
+        Integer imgOther1 = R.drawable.seoyeon;
+        String txtOther = "서연의 집: \n" +
+                "넓은 창 밖으로 바다가 보이는 카페. 건축학개론 촬영지로 더 유명한 카페. 납뜩이 머핀, 스토리텔링 떡 등 독특한 이름의 메뉴들이 인기 메뉴";
+        Integer imgOther2 = R.drawable.suguk;
+        String txtOther2 = "휴애리 여름 수국 축제: \n" +
+                "먹거리 - 솜사탕, 흑돼지빵, 소시지 \n" +
+                "상철체험프로그램 - 동물먹이주기체험(산토끼, 흑염소, 산양, 염소, 말 등), 흑돼지야놀자(흑돼지쇼), 승마체험, 야생화 자연 학습체험, 전통놀이체험(돌탑쌓기, 투호던지기, 굴렁쇠 체험 등)";
+        if (checkBox8.isChecked()) {
+            Popups(tourName, imgTour, tourExplain, imgOther1, txtOther, imgOther2, txtOther2);
+        }
+    }
+
+
+
+    public void Popups(String tourName, Integer imgTour, String tourExplain, Integer imgOther1, String txtOther, Integer imgOther2, String txtOther2) {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
 
         LayoutInflater inflater
@@ -67,27 +203,24 @@ public class SY_TouristActivity extends AppCompatActivity {
         View layout = inflater.inflate(R.layout.activity_sy_popup, null);
 
         /*관광지명, 사진, 설명*/
-        TextView tourName = (TextView) layout.findViewById(R.id.txtTourName);
-        tourName.setText("사라오름");
-        ImageView imgTour = (ImageView) layout.findViewById(R.id.imgTour);
-        imgTour.setImageResource(R.drawable.sara);
-        TextView tourExplain = (TextView) layout.findViewById(R.id.txtExplain);
-        tourExplain.setText("노루떼가 뛰어노는 모습이 한 폭의 그림 같은 곳");
+        TextView tourNames = (TextView) layout.findViewById(R.id.txtTourName);
+        tourNames.setText(tourName);
+        ImageView imgTours = (ImageView) layout.findViewById(R.id.imgTour);
+        imgTours.setImageResource(imgTour);
+        TextView tourExplains = (TextView) layout.findViewById(R.id.txtExplain);
+        tourExplains.setText(tourExplain);
 
         /*먹거리사진, 설명*/
-        ImageView imgOther1 = (ImageView) layout.findViewById(R.id.imgOther1);
-        imgOther1.setImageResource(R.drawable.seoyeon);
-        TextView txtOther1 = (TextView) layout.findViewById(R.id.txtOther1);
-        txtOther1.setText("서연의 집: \n" +
-                "넓은 창 밖으로 바다가 보이는 카페. 건축학개론 촬영지로 더 유명한 카페. 납뜩이 머핀, 스토리텔링 떡 등 독특한 이름의 메뉴들이 인기 메뉴");
+        ImageView imgOther1s = (ImageView) layout.findViewById(R.id.imgOther1);
+        imgOther1s.setImageResource(imgOther1);
+        TextView txtOther1s = (TextView) layout.findViewById(R.id.txtOther1);
+        txtOther1s.setText(txtOther);
 
         /*축제사진, 설명*/
-        ImageView imgOther2 = (ImageView) layout.findViewById(R.id.imgOther2);
-        imgOther2.setImageResource(R.drawable.suguk);
-        TextView txtOther2 = (TextView) layout.findViewById(R.id.txtOther2);
-        txtOther2.setText("휴애리 여름 수국 축제: \n" +
-                "먹거리 - 솜사탕, 흑돼지빵, 소시지 \n" +
-                "상철체험프로그램 - 동물먹이주기체험(산토끼, 흑염소, 산양, 염소, 말 등), 흑돼지야놀자(흑돼지쇼), 승마체험, 야생화 자연 학습체험, 전통놀이체험(돌탑쌓기, 투호던지기, 굴렁쇠 체험 등)");
+        ImageView imgOther2s = (ImageView) layout.findViewById(R.id.imgOther2);
+        imgOther2s.setImageResource(imgOther2);
+        TextView txtOther2s = (TextView) layout.findViewById(R.id.txtOther2);
+        txtOther2s.setText(txtOther2);
 
         alertDialogBuilder
                 .setCancelable(false)
@@ -95,6 +228,7 @@ public class SY_TouristActivity extends AppCompatActivity {
                         new DialogInterface.OnClickListener() {
                             public void onClick(
                                     DialogInterface dialog, int id) {
+
                                 // 프로그램 종료
 
                             }
@@ -106,22 +240,56 @@ public class SY_TouristActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
-    /*[다음]버튼을 눌렀을 때*/
+   /*[다음]버튼을 눌렀을 때*/
     public void btnOk(View v) {
         int count = 0;
-        SparseBooleanArray countCheckBox = listview.getCheckedItemPositions();
-        int size = adapter.getCount();
-        ArrayList<String> ReceiveArr= new ArrayList<>();
-        for (int i = 0; i < size; i++) {
-            if (countCheckBox.valueAt(i) == true) {
-                count++;
-               int index = countCheckBox.keyAt(i);
 
-                ReceiveArr.add(listViewItemSYList.get(index).getText());
-                        Toast toasts = Toast.makeText(getApplicationContext(), "선택한 관광지: "+ listViewItemSYList.get(index).getText(), Toast.LENGTH_SHORT);
-                toasts.show();
-            }
+        ArrayList<String> ReceiveArr = new ArrayList<>();
+
+
+        if (checkBox1.isChecked()) {
+            count++;
+            /*Toast toast1 = Toast.makeText(getApplicationContext(), "선택한 관광지: " + checkBox1.getText(), Toast.LENGTH_SHORT);
+            toast1.show();*/
+            ReceiveArr.add(checkBox1.getText().toString());
+        } else if (checkBox2.isChecked()) {
+            count++;
+            /*Toast toast2 = Toast.makeText(getApplicationContext(), "선택한 관광지: " + checkBox2.getText(), Toast.LENGTH_SHORT);
+            toast2.show();*/
+            ReceiveArr.add(checkBox2.getText().toString());
+        } else if (checkBox3.isChecked()) {
+            count++;
+            /*Toast toast3 = Toast.makeText(getApplicationContext(), "선택한 관광지: " + checkBox3.getText(), Toast.LENGTH_SHORT);
+            toast3.show();*/
+            ReceiveArr.add(checkBox3.getText().toString());
+        } else if (checkBox4.isChecked()) {
+            count++;
+            /*Toast toast4 = Toast.makeText(getApplicationContext(), "선택한 관광지: " + checkBox4.getText(), Toast.LENGTH_SHORT);
+            toast4.show();*/
+            ReceiveArr.add(checkBox4.getText().toString());
+        } else if (checkBox5.isChecked()) {
+            count++;
+            /*Toast toast5 = Toast.makeText(getApplicationContext(), "선택한 관광지: " + checkBox5.getText(), Toast.LENGTH_SHORT);
+            toast5.show()*/;
+            ReceiveArr.add(checkBox5.getText().toString());
+        } else if (checkBox6.isChecked()) {
+            count++;
+            /*Toast toast6 = Toast.makeText(getApplicationContext(), "선택한 관광지: " + checkBox6.getText(), Toast.LENGTH_SHORT);
+            toast6.show();*/
+            ReceiveArr.add(checkBox6.getText().toString());
+        } else if (checkBox7.isChecked()) {
+            count++;
+            /*Toast toast7 = Toast.makeText(getApplicationContext(), "선택한 관광지: " + checkBox7.getText(), Toast.LENGTH_SHORT);
+            toast7.show();*/
+            ReceiveArr.add(checkBox7.getText().toString());
+        } else if (checkBox8.isChecked()) {
+            count++;
+            /*Toast toast8 = Toast.makeText(getApplicationContext(), "선택한 관광지: " + checkBox8.getText(), Toast.LENGTH_SHORT);
+            toast8.show();*/
+            ReceiveArr.add(checkBox8.getText().toString());
+
         }
+
 
         if (count == 0) {
             Toast toast = Toast.makeText(getApplicationContext(), "관광지를 1개의 항목 이상 선택해주세요.", Toast.LENGTH_SHORT);
@@ -135,72 +303,11 @@ public class SY_TouristActivity extends AppCompatActivity {
             startActivity(intent);
         }
     }
-
-
-    public class CustomChoiceListViewAdapter extends BaseAdapter {
-
-        /*ListViewAdapter의 생성자*/
-        public CustomChoiceListViewAdapter() {
-
-        }
-
-       /* Adapter에 사용되는 데이터의 개수를 리턴*/
-        @Override
-        public int getCount() {
-            return listViewItemSYList.size();
-        }
-
-        /*position에 위치한 데이터를 화면에 출력하는데 사용될 View를 리턴*/
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            final int pos = position;
-            final Context context = parent.getContext();
-
-           /* "listview_item" Layout을 inflate하여 convertView 참조 획득*/
-            if (convertView == null) {
-                LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                convertView = inflater.inflate(R.layout.activity_sy_checkbox_row, parent, false);
-            }
-
-            /*화면에 표시될 View(Layout이 inflate된)으로부터 위젯에 대한 참조 획득*/
-            ImageButton iconImageView = (ImageButton) convertView.findViewById(R.id.imgBtnWhat);
-            TextView textTextView = (TextView) convertView.findViewById(R.id.txtName);
-
-
-            // Data Set(listViewItemSYList)에서 position에 위치한 데이터 참조 획득
-            SY_ListViewItem SYListViewItem = listViewItemSYList.get(position);
-
-            // 아이템 내 각 위젯에 데이터 반영
-            iconImageView.setImageDrawable(SYListViewItem.getIcon());
-            textTextView.setText(SYListViewItem.getText());
-
-            return convertView;
-        }
-
-
-        // 지정한 위치(position)에 있는 데이터와 관계된 아이템(row)의 ID를 리턴. : 필수 구현
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        // 지정한 위치(position)에 있는 데이터 리턴 : 필수 구현
-        @Override
-        public Object getItem(int position) {
-            return listViewItemSYList.get(position);
-        }
-
-        // 아이템 데이터 추가를 위한 함수. 개발자가 원하는대로 작성 가능.
-        public void addItem(Drawable icon, String text) {
-            SY_ListViewItem item = new SY_ListViewItem();
-            item.setIcon(icon);
-            item.setText(text);
-
-            listViewItemSYList.add(item);
-        }
-
-    }
 }
+
+
+
+
 
 
 

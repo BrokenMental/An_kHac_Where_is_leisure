@@ -28,9 +28,9 @@
         <activity android:name=".EB_Choiceloc"/>
         <activity android:name=".SH_ChoiceStayActivity"/>
         <activity android:name=".SH_Stayintent" />
+        <activity android:name=".JU_ResultActivity" />
         <activity android:name=".SY_TouristActivity"/>
         <activity android:name=".SY_activity_popup" />
-        <activity android:name=".SY_activity_checkbox_row" />
     </application>
 
 </manifest>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".JU_ResultActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="160dp"
+        android:layout_height="55dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@drawable/logo" />
+
+    <Button
+        android:id="@+id/btn_home"
+        android:layout_width="315dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="11dp"
+        android:text="종료" />
+
+    <Button
+        android:id="@+id/btn_premap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="13dp"
+        android:layout_marginTop="13dp"
+        android:text="이전" />
+
+    <Spinner
+        android:id="@+id/sp_daycho"
+        android:layout_width="261dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="25dp"
+        android:layout_marginTop="73dp"
+        android:entries="@array/sp_Day"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/sp_daycho"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="25dp"
+        android:text="여행일자"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/txtView_choloca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/textViewTitle"
+        android:layout_marginTop="145dp"
+        android:text="선택 지역 : 제주도"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/txtView_choday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/textViewTitle"
+        android:layout_marginTop="190dp"
+        android:text="일정 : 2박3일"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/txtView_chostay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/textViewTitle"
+        android:layout_marginTop="238dp"
+        android:text="1일차 숙박 : 별빛 펜션"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/textViewTitle"
+        android:layout_marginTop="295dp"
+        android:text="이동경로"
+        android:textSize="15dp" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="284dp"
+        android:background="?android:attr/listDivider" />
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="130dp"
+        android:background="?android:attr/listDivider" />
+
+    <LinearLayout
+        android:id="@+id/ResultTmap"
+        android:layout_width="match_parent"
+        android:layout_height="271dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="323dp"
+        android:orientation="vertical"></LinearLayout>
+
+</RelativeLayout>

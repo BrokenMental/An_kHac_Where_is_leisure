@@ -19,7 +19,7 @@ public class SH_Stayintent extends AppCompatActivity implements View.OnClickList
     private TextView forth;
     private EditText search;
     private Button cancel;
-    @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sh_stayintent);
@@ -35,7 +35,6 @@ public class SH_Stayintent extends AppCompatActivity implements View.OnClickList
         second.setVisibility(View.INVISIBLE);
         third.setVisibility(View.INVISIBLE);
         forth.setVisibility(View.INVISIBLE);
-
         TextWatcher textWatcher = new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -79,8 +78,11 @@ public class SH_Stayintent extends AppCompatActivity implements View.OnClickList
 
     }
 
-
-
+    @Override
+    public void onBackPressed() {
+        setResult(5);
+        finish();
+    }
 
     @Override
     public void onClick(View view) {

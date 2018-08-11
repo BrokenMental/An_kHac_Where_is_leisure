@@ -1,24 +1,15 @@
 package cs.inhatc.khac.khac_where_is_leisure;
 
-import android.Manifest;
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Color;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
+import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.skt.Tmap.TMapData;
 import com.skt.Tmap.TMapPoint;
@@ -32,7 +23,7 @@ import org.w3c.dom.NodeList;
 import java.util.ArrayList;
 
 /* Develop By Jinuk-Ha */
-public class JU_MapActivity extends JU_TotalActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
+public class JU_ResultActivity extends JU_TotalActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
 
     private TMapPoint MapStart, MapEnd;
     private TMapPoint tMapPoint1 = new TMapPoint(37.4588197, 126.63411719999999); // 인하대병원
@@ -46,24 +37,29 @@ public class JU_MapActivity extends JU_TotalActivity implements View.OnClickList
     private TMapPoint tMapPoint9 = new TMapPoint(37.557527, 126.92446689999997); // 홍대 입구역
     private TMapPoint tMapPoint0 = new TMapPoint(37.55998, 126.98582959999999); // 명동
 
-    private LinearLayout linearLayoutTmap;
+    private Button btnFinish, btnPreMap;
+    private LinearLayout ResultTmap;
     private TMapView tMapView ;
     private TMapData tMapData;
     private ArrayList passList;
-    private Button btnPre, btnNext;
     private Spinner spday;
+    private TextView txtChoStay, txtChoLoca, txtChoDay;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ju_map);
+        setContentView(R.layout.activity_ju_resultview);
         actList.add(this);
 
-        // 이전, 다음버튼
-        btnPre = findViewById(R.id.map_pre);
-        btnPre.setOnClickListener(this);
-        btnNext = findViewById(R.id.map_next);
-        btnNext.setOnClickListener(this);
+        btnPreMap = findViewById(R.id.btn_premap);
+        btnPreMap.setOnClickListener(this);
+
+        btnFinish = findViewById(R.id.btn_home);
+        btnFinish.setOnClickListener(this);
+
+        txtChoStay = findViewById(R.id.txtView_chostay);
+        txtChoLoca = findViewById(R.id.txtView_choloca);
+        txtChoDay = findViewById(R.id.txtView_choday);
 
         // TMap에서 사용되는 데이터 관련 변수
         tMapData = new TMapData();
@@ -73,13 +69,13 @@ public class JU_MapActivity extends JU_TotalActivity implements View.OnClickList
         tMapView.setSKTMapApiKey(getString(R.string.tmap_api_key));
 
         // 지도 생성
-        linearLayoutTmap = findViewById(R.id.linearLayoutTmap);
-        linearLayoutTmap.addView(tMapView);
+        ResultTmap = findViewById(R.id.ResultTmap);
+        ResultTmap.addView(tMapView);
 
         tMapView.setZoomLevel(12);
 
         // 스피너
-        spday = findViewById(R.id.sp_day);
+        spday = findViewById(R.id.sp_daycho);
         spday.setOnItemSelectedListener(this);
 
     }
@@ -87,13 +83,11 @@ public class JU_MapActivity extends JU_TotalActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.map_next :
-                Intent mn = new Intent(JU_MapActivity.this, JU_ResultActivity.class);
-                mn.putExtra("throw","abc");
-                startActivity(mn);
-                break;
-            case R.id.map_pre :
+            case R.id.btn_premap:
                 finish();
+                break;
+            case R.id.btn_home:
+                FinishAction();
                 break;
             default:
                 break;
@@ -125,6 +119,7 @@ public class JU_MapActivity extends JU_TotalActivity implements View.OnClickList
 
                 // 경로 검색 이벤트
                 findPathDataWithType();
+                txtChoStay.setText(spday.getSelectedItem().toString()+"숙박 : ");
                 break;
             case 1 :
                 // 시작위치 변경
@@ -143,7 +138,7 @@ public class JU_MapActivity extends JU_TotalActivity implements View.OnClickList
 
                 // 경로 검색
                 findPathDataWithType();
-
+                txtChoStay.setText(spday.getSelectedItem().toString()+"숙박 : ");
                 break;
             default :
                 break;

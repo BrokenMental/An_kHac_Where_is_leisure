@@ -2,7 +2,6 @@ package cs.inhatc.khac.khac_where_is_leisure;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -18,8 +17,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 /* Develop By JoSeokHee */
-public class SH_ChoiceStayActivity extends AppCompatActivity implements View.OnClickListener{
-    private int days=3;
+public class SH_ChoiceStayActivity extends JU_TotalActivity implements View.OnClickListener{
+    private int days;
     private Spinner spinner;
     private int p_day=0;
     private TextView day;
@@ -35,12 +34,17 @@ public class SH_ChoiceStayActivity extends AppCompatActivity implements View.OnC
     private Intent intent;
     private String content;
     private CheckBox option;
-
+    private int state=0;
+    private Intent basket;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sh_choicestay);
+        actList.add(this);
 
+        basket=getIntent();
+        days=basket.getIntExtra("days",0);
+        days-=48;
         option=(CheckBox)findViewById(R.id.checkBox);
 
         TextWatcher textWatcher = new TextWatcher() {
@@ -75,7 +79,8 @@ public class SH_ChoiceStayActivity extends AppCompatActivity implements View.OnC
 
 
         t_days.setText(days+"박"+(days+1)+"일");
-        next.setVisibility(View.INVISIBLE);
+
+
 
         final ArrayList<String> list=new ArrayList<>();
         list.add("선택");
@@ -93,31 +98,31 @@ public class SH_ChoiceStayActivity extends AppCompatActivity implements View.OnC
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                        if (p_day != days) {
-                            if(days-p_day<i){
-                                Toast.makeText(SH_ChoiceStayActivity.this,"선택 할 수 없습니다.", Toast.LENGTH_LONG).show();
-                                return;
-                            }
-                            p_day += i;
-                            day.setText((p_day + 1) + "번째 날");
-                            if(i>0) {
+                if (p_day != days) {
+                    if(days-p_day<i){
+                        Toast.makeText(SH_ChoiceStayActivity.this,"선택 할 수 없습니다.", Toast.LENGTH_LONG).show();
+                        return;
+                    }
+                    p_day += i;
+                    day.setText((p_day + 1) + "번째 날");
+                    if(i>0) {
 
-                                t_r += i + "박 : " + lod.getText().toString() + "\n";
-                                r.setText(t_r);
-                                spinner.setSelection(0);
-                                lod.setText("");
-                                suk.setVisibility(View.INVISIBLE);
-                                spinner.setVisibility(View.INVISIBLE);
+                        t_r += i + "박 : " + lod.getText().toString() + "\n";
+                        r.setText(t_r);
+                        spinner.setSelection(0);
+                        lod.setText("");
+                        suk.setVisibility(View.INVISIBLE);
+                        spinner.setVisibility(View.INVISIBLE);
 
-                            }
-                        } else {
-                            next.setVisibility(View.VISIBLE);
-                            spinner.setVisibility(View.INVISIBLE);
-                            day.setVisibility(View.INVISIBLE);
-                            lod.setVisibility(View.INVISIBLE);
-                            suk.setVisibility(View.INVISIBLE);
-                            spinner.setVisibility(View.INVISIBLE);
-                        }
+                    }
+                } else {
+                    state=1;
+                    spinner.setVisibility(View.INVISIBLE);
+                    day.setVisibility(View.INVISIBLE);
+                    lod.setVisibility(View.INVISIBLE);
+                    suk.setVisibility(View.INVISIBLE);
+                    spinner.setVisibility(View.INVISIBLE);
+                }
 
 
             }
@@ -139,10 +144,16 @@ public class SH_ChoiceStayActivity extends AppCompatActivity implements View.OnC
             startActivityForResult(search,0);
         }
         else if(v==next){
-            Intent next=new Intent(SH_ChoiceStayActivity.this,SY_TouristActivity.class);
-            next.putExtra("throw",t_r);
-            next.putExtra("check",option.isChecked());
-            startActivity(next);
+            if(state==1) {
+                Intent next = new Intent(SH_ChoiceStayActivity.this, SY_TouristActivity.class);
+                next.putExtra("throw", t_r);
+                next.putExtra("check", option.isChecked());
+                startActivity(next);
+            }
+            else{
+                Toast.makeText(SH_ChoiceStayActivity.this,"숙소를 모두 선택 해 주세요", Toast.LENGTH_LONG).show();
+                return;
+            }
         }
         else if(v==pre){
             finish();
