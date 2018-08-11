@@ -17,7 +17,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class ChoiceStayActivity extends AppCompatActivity implements View.OnClickListener{
+/* Develop By JoSeokHee */
+public class SH_ChoiceStayActivity extends AppCompatActivity implements View.OnClickListener{
     private int days=3;
     private Spinner spinner;
     private int p_day=0;
@@ -38,7 +39,7 @@ public class ChoiceStayActivity extends AppCompatActivity implements View.OnClic
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choicestay);
+        setContentView(R.layout.activity_sh_choicestay);
 
         option=(CheckBox)findViewById(R.id.checkBox);
 
@@ -94,7 +95,7 @@ public class ChoiceStayActivity extends AppCompatActivity implements View.OnClic
 
                         if (p_day != days) {
                             if(days-p_day<i){
-                                Toast.makeText(ChoiceStayActivity.this,"선택 할 수 없습니다.", Toast.LENGTH_LONG).show();
+                                Toast.makeText(SH_ChoiceStayActivity.this,"선택 할 수 없습니다.", Toast.LENGTH_LONG).show();
                                 return;
                             }
                             p_day += i;
@@ -128,19 +129,23 @@ public class ChoiceStayActivity extends AppCompatActivity implements View.OnClic
         });
         lod.setOnClickListener(this);
         next.setOnClickListener(this);
+        pre.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         if(v==lod){
-            Intent search=new Intent(ChoiceStayActivity.this,stayintent.class);
+            Intent search=new Intent(SH_ChoiceStayActivity.this,SH_Stayintent.class);
             startActivityForResult(search,0);
         }
         else if(v==next){
-            Intent next=new Intent(ChoiceStayActivity.this,badara.class);
+            Intent next=new Intent(SH_ChoiceStayActivity.this,SY_TouristActivity.class);
             next.putExtra("throw",t_r);
             next.putExtra("check",option.isChecked());
             startActivity(next);
+        }
+        else if(v==pre){
+            finish();
         }
     }
     @Override

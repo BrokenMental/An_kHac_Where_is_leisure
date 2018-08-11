@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MapActivity">
+    tools:context=".JU_MapActivity">
 
     <TextView
         android:id="@+id/txt_day"
@@ -26,11 +26,10 @@
 
     <Button
         android:id="@+id/map_next"
-        android:layout_width="361dp"
+        android:layout_width="337dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="27dp"
+        android:layout_centerHorizontal="true"
         android:text="다음" />
 
     <FrameLayout

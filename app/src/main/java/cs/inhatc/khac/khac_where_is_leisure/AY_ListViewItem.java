@@ -3,7 +3,7 @@ package cs.inhatc.khac.khac_where_is_leisure;
 import android.graphics.drawable.Drawable;
 
 /*Dvelop By KimAYoung*/
-public class ListViewItem {
+public class AY_ListViewItem {
     private Drawable iconDrawable ;
     private String titleStr ;
     private String descStr ;

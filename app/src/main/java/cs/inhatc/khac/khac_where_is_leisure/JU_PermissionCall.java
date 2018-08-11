@@ -7,11 +7,12 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 
+/* Develop By Jinuk-Ha */
 /* 위치 권한 얻는 코드 */
-public class PermissionCall extends AppCompatActivity {
+public class JU_PermissionCall extends AppCompatActivity {
 
     private final int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 1;
-    public PermissionCall(Context context){
+    public JU_PermissionCall(Context context){
         // Assume thisActivity is the current activity
         int permissionCheckFL = ContextCompat.checkSelfPermission(context,
                 Manifest.permission.ACCESS_FINE_LOCATION);

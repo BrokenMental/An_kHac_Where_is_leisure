@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0080FF"
-    tools:context=".ChoiceStayActivity">
+    tools:context=".SH_ChoiceStayActivity">
 
     <TextView
         android:id="@+id/area"

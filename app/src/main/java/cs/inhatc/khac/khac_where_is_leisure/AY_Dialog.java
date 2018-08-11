@@ -6,12 +6,12 @@ import android.view.View;
 import android.widget.Button;
 
 /*Dvelop By KimAYoung*/
-public class Dialog extends Activity implements View.OnClickListener{
+public class AY_Dialog extends Activity implements View.OnClickListener{
     private Button btnclose;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dialog);
+        setContentView(R.layout.activity_ay_dialog);
 
         btnclose = findViewById(R.id.btnclose);
         btnclose.setOnClickListener(this);

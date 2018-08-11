@@ -13,22 +13,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainPage">
+        <activity android:name=".AY_MainPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MapActivity"/>
-        <activity android:name=".Mypage" />
-        <activity android:name=".AfterTrip" />
-        <activity android:name=".Dialog" />
-        <activity android:name=".AfterTripMake"/>
-        <activity android:name=".Choiceloc"/>
-        <activity android:name=".ChoiceStayActivity"/>
-        <activity android:name=".stayintent" />
-        <activity android:name=".badara"/>
+        <activity android:name=".JU_MapActivity"/>
+        <activity android:name=".AY_Mypage" />
+        <activity android:name=".AY_AfterTrip" />
+        <activity android:name=".AY_Dialog" />
+        <activity android:name=".AY_AfterTripMake"/>
+        <activity android:name=".EB_Choiceloc"/>
+        <activity android:name=".SH_ChoiceStayActivity"/>
+        <activity android:name=".SH_Stayintent" />
+        <activity android:name=".SY_TouristActivity"/>
+        <activity android:name=".SY_activity_popup" />
+        <activity android:name=".SY_activity_checkbox_row" />
     </application>
 
 </manifest>

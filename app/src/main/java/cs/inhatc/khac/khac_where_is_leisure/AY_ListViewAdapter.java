@@ -14,12 +14,12 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 /*Dvelop By KimAYoung*/
-public class ListViewAdapter extends BaseAdapter implements Filterable {
+public class AY_ListViewAdapter extends BaseAdapter implements Filterable {
 
-    private ArrayList<ListViewItem> listViewItemList = new ArrayList<ListViewItem>();
-    private ArrayList<ListViewItem> filteredItemList = listViewItemList;
+    private ArrayList<AY_ListViewItem> listViewItemAYList = new ArrayList<AY_ListViewItem>();
+    private ArrayList<AY_ListViewItem> filteredItemList = listViewItemAYList;
     Filter listFilter;
-    public ListViewAdapter(){
+    public AY_ListViewAdapter(){
 
     }
 
@@ -34,18 +34,18 @@ public class ListViewAdapter extends BaseAdapter implements Filterable {
         final Context context = parent.getContext();
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.listview_item, parent, false);
+            convertView = inflater.inflate(R.layout.activity_ay_listview_item, parent, false);
         }
 
         ImageView iconImageView = (ImageView) convertView.findViewById(R.id.imageView1);
         TextView titleTextView = (TextView) convertView.findViewById(R.id.textView1);
         TextView descTextView = (TextView) convertView.findViewById(R.id.textView2);
 
-        ListViewItem listViewItem = filteredItemList.get(position);
+        AY_ListViewItem AYListViewItem = filteredItemList.get(position);
 
-        iconImageView.setImageDrawable(listViewItem.getIcon());
-        titleTextView.setText(listViewItem.getTitle());
-        descTextView.setText(listViewItem.getDesc());
+        iconImageView.setImageDrawable(AYListViewItem.getIcon());
+        titleTextView.setText(AYListViewItem.getTitle());
+        descTextView.setText(AYListViewItem.getDesc());
         return convertView;
     }
 
@@ -60,11 +60,11 @@ public class ListViewAdapter extends BaseAdapter implements Filterable {
     }
 
     public void addItem(Drawable icon, String title, String desc) {
-        ListViewItem item = new ListViewItem();
+        AY_ListViewItem item = new AY_ListViewItem();
         item.setIcon(icon);
         item.setTitle(title);
         item.setDesc(desc);
-        listViewItemList.add(item);
+        listViewItemAYList.add(item);
     }
 
     @Override public Filter getFilter() {
@@ -81,12 +81,12 @@ public class ListViewAdapter extends BaseAdapter implements Filterable {
             FilterResults results = new FilterResults() ;
 
             if (constraint == null || constraint.length() == 0) {
-                results.values = listViewItemList ;
-                results.count = listViewItemList.size() ;
+                results.values = listViewItemAYList;
+                results.count = listViewItemAYList.size() ;
             } else {
-                ArrayList<ListViewItem> itemList = new ArrayList<ListViewItem>() ;
+                ArrayList<AY_ListViewItem> itemList = new ArrayList<AY_ListViewItem>() ;
 
-                for (ListViewItem item : listViewItemList) {
+                for (AY_ListViewItem item : listViewItemAYList) {
                     if (item.getTitle().toUpperCase().contains(constraint.toString().toUpperCase()) ||
                             item.getDesc().toUpperCase().contains(constraint.toString().toUpperCase()))
                     {
@@ -104,7 +104,7 @@ public class ListViewAdapter extends BaseAdapter implements Filterable {
         protected void publishResults(CharSequence constraint, FilterResults results) {
 
             // update listview by filtered data list.
-            filteredItemList = (ArrayList<ListViewItem>) results.values ;
+            filteredItemList = (ArrayList<AY_ListViewItem>) results.values ;
 
             // notify
             if (results.count > 0) {

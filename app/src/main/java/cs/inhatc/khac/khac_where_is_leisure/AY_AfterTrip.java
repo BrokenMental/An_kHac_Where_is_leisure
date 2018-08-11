@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 /*Dvelop By KimAYoung*/
-public class AfterTrip extends AppCompatActivity implements View.OnClickListener{
+public class AY_AfterTrip extends AppCompatActivity implements View.OnClickListener{
 
     ListView listview = null ;
 
@@ -20,15 +20,15 @@ public class AfterTrip extends AppCompatActivity implements View.OnClickListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_aftertrip);
+        setContentView(R.layout.activity_ay_aftertrip);
 
         btnBack=(Button)findViewById(R.id.btnBack);
         btnBack.setOnClickListener(this);
 
-        ListViewAdapter adapter;
+        AY_ListViewAdapter adapter;
 
         // Adapter 생성
-        adapter = new ListViewAdapter();
+        adapter = new AY_ListViewAdapter();
 
         // 리스트뷰 참조 및 Adapter달기
         listview = (ListView) findViewById(R.id.listview1);
@@ -66,7 +66,7 @@ public class AfterTrip extends AppCompatActivity implements View.OnClickListener
                     listview.clearTextFilter() ;
                 }
                 */
-                ((ListViewAdapter)listview.getAdapter()).getFilter().filter(filterText) ;
+                ((AY_ListViewAdapter)listview.getAdapter()).getFilter().filter(filterText) ;
 
             }
             @Override
@@ -82,7 +82,7 @@ public class AfterTrip extends AppCompatActivity implements View.OnClickListener
     }
     public void onClick(View v) {
         if (v == btnBack) {
-            Intent intent = new Intent(AfterTrip.this, MainPage.class);
+            Intent intent = new Intent(AY_AfterTrip.this, AY_MainPage.class);
             startActivity(intent);
         }
     }

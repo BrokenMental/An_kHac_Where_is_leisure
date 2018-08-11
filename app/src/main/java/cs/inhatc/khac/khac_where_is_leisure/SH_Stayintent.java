@@ -10,7 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class stayintent extends AppCompatActivity implements View.OnClickListener {
+/* Develop By JoSeokHee */
+public class SH_Stayintent extends AppCompatActivity implements View.OnClickListener {
     private Intent intent;
     private TextView first;
     private TextView second;
@@ -21,7 +22,7 @@ public class stayintent extends AppCompatActivity implements View.OnClickListene
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_stayintent);
+        setContentView(R.layout.activity_sh_stayintent);
 
         first = (TextView) findViewById(R.id.textView1);
         second = (TextView) findViewById(R.id.textView2);
@@ -84,25 +85,25 @@ public class stayintent extends AppCompatActivity implements View.OnClickListene
     @Override
     public void onClick(View view) {
         if (view == first) {
-            Intent change=new Intent(stayintent.this,ChoiceStayActivity.class);
+            Intent change=new Intent(SH_Stayintent.this,SH_ChoiceStayActivity.class);
             change.putExtra("lod",first.getText().toString());
             setResult(0,change);
             finish();
         }
         else if(view==second){
-            Intent change=new Intent(stayintent.this,ChoiceStayActivity.class);
+            Intent change=new Intent(SH_Stayintent.this,SH_ChoiceStayActivity.class);
             change.putExtra("lod",second.getText().toString());
             setResult(0,change);
             finish();
         }
         else if(view==third){
-            Intent change=new Intent(stayintent.this,ChoiceStayActivity.class);
+            Intent change=new Intent(SH_Stayintent.this,SH_ChoiceStayActivity.class);
             change.putExtra("lod",third.getText().toString());
             setResult(0,change);
             finish();
         }
         else if(view==forth){
-            Intent change=new Intent(stayintent.this,ChoiceStayActivity.class);
+            Intent change=new Intent(SH_Stayintent.this,SH_ChoiceStayActivity.class);
             change.putExtra("lod",forth.getText().toString());
             setResult(0,change);
             finish();

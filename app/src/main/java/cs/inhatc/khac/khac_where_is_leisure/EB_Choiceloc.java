@@ -1,7 +1,4 @@
-/* Develop By Eunbee-Shin */
-
 package cs.inhatc.khac.khac_where_is_leisure;
-
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,8 +11,8 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-
-public class Choiceloc extends AppCompatActivity {
+/* Develop By Eunbee-Shin */
+public class EB_Choiceloc extends AppCompatActivity {
 
     ArrayAdapter<CharSequence> ad_spin1, ad_spin2;
     String choice_do="";
@@ -26,7 +23,7 @@ public class Choiceloc extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choiceloc);
+        setContentView(R.layout.activity_eb_choiceloc);
 
         final Spinner spin1 = findViewById(R.id.spinner2);
         final Spinner spin2 = findViewById(R.id.spinner);
@@ -43,7 +40,7 @@ public class Choiceloc extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Choiceloc.super.onBackPressed();
+                EB_Choiceloc.super.onBackPressed();
             }
         });
 
@@ -64,7 +61,7 @@ public class Choiceloc extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if(ad_spin1.getItem(i).equals("충청도")){
                     choice_do = "충청도";
-                    ad_spin2 = ArrayAdapter.createFromResource(Choiceloc.this,R.array.ccd_array,android.R.layout.simple_spinner_dropdown_item);
+                    ad_spin2 = ArrayAdapter.createFromResource(EB_Choiceloc.this,R.array.ccd_array,android.R.layout.simple_spinner_dropdown_item);
                     ad_spin2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     spin2.setAdapter(ad_spin2);
                     spin2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -83,7 +80,7 @@ public class Choiceloc extends AppCompatActivity {
                     });
                 }
                 else if(ad_spin1.getItem(i).equals("제주도")){
-                    ad_spin2 = ArrayAdapter.createFromResource(Choiceloc.this,R.array.no_array,android.R.layout.simple_spinner_dropdown_item);
+                    ad_spin2 = ArrayAdapter.createFromResource(EB_Choiceloc.this,R.array.no_array,android.R.layout.simple_spinner_dropdown_item);
                     ad_spin2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     spin2.setAdapter(ad_spin2);
                     iv.setImageResource(R.drawable.jj1);
@@ -100,7 +97,7 @@ public class Choiceloc extends AppCompatActivity {
                     });
                 }
                 else if(ad_spin1.getItem(i).equals("인천광역시")){
-                    ad_spin2 = ArrayAdapter.createFromResource(Choiceloc.this,R.array.no_array,android.R.layout.simple_spinner_dropdown_item);
+                    ad_spin2 = ArrayAdapter.createFromResource(EB_Choiceloc.this,R.array.no_array,android.R.layout.simple_spinner_dropdown_item);
                     ad_spin2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     spin2.setAdapter(ad_spin2);
                     iv.setImageResource(R.drawable.ic2);
@@ -141,11 +138,11 @@ public class Choiceloc extends AppCompatActivity {
                 Integer days = (int)date2;
 
                 if(spin2.getItemAtPosition(0).equals("(선택불가)")){
-                    Toast.makeText(Choiceloc.this, "여행지가 어디인가요?", Toast.LENGTH_LONG).show();
+                    Toast.makeText(EB_Choiceloc.this, "여행지가 어디인가요?", Toast.LENGTH_LONG).show();
                 }
 
                 else{
-                    Intent intent = new Intent(getApplicationContext(),ChoiceStayActivity.class);
+                    Intent intent = new Intent(getApplicationContext(),SH_ChoiceStayActivity.class);
                     intent.putExtra("choice_do",doice);
                     intent.putExtra("choice_si",siice);
                     intent.putExtra("days",days);
