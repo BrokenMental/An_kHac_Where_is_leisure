@@ -5,7 +5,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F0F0F0"
     tools:context=".JU_ResultActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="247dp"
+        android:layout_above="@+id/textView13"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="-295dp"
+        app:srcCompat="@drawable/backwhite_ju" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="352dp"
+        android:layout_height="1dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="131dp"
+        android:background="#D7D7D7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.381" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -13,35 +39,41 @@
         android:layout_height="55dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         app:srcCompat="@drawable/logo" />
 
     <Button
         android:id="@+id/btn_home"
-        android:layout_width="315dp"
-        android:layout_height="wrap_content"
+        android:layout_width="342dp"
+        android:layout_height="36dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="11dp"
+        android:background="#6EABBE"
+        android:textColor="#FFFFFF"
         android:text="종료" />
 
     <Button
         android:id="@+id/btn_premap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="63dp"
+        android:layout_height="43dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_marginEnd="13dp"
-        android:layout_marginTop="13dp"
-        android:text="이전" />
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="15dp"
+        android:background="#6EABBE"
+        android:text="이전"
+        android:textColor="#FFFFFF" />
 
     <Spinner
         android:id="@+id/sp_daycho"
-        android:layout_width="261dp"
-        android:layout_height="40dp"
+        android:layout_width="241dp"
+        android:layout_height="35dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:layout_marginEnd="25dp"
-        android:layout_marginTop="73dp"
+        android:layout_marginTop="89dp"
         android:entries="@array/sp_Day"
         android:textAlignment="center" />
 
@@ -49,11 +81,11 @@
         android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/sp_daycho"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="25dp"
+        android:layout_alignBaseline="@+id/sp_daycho"
+        android:layout_toStartOf="@+id/sp_daycho"
         android:text="여행일자"
-        android:textSize="25dp" />
+        android:textColor="#000000"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/txtView_choloca"
@@ -61,7 +93,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/textViewTitle"
-        android:layout_marginTop="145dp"
+        android:layout_marginTop="154dp"
         android:text="선택 지역 : 제주도"
         android:textSize="20dp" />
 
@@ -81,7 +113,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/textViewTitle"
-        android:layout_marginTop="238dp"
+        android:layout_marginTop="224dp"
         android:text="1일차 숙박 : 별빛 펜션"
         android:textSize="20dp" />
 

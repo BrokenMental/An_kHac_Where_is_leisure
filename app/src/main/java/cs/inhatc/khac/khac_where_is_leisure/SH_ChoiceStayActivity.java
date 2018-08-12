@@ -45,7 +45,7 @@ public class SH_ChoiceStayActivity extends JU_TotalActivity implements View.OnCl
         basket=getIntent();
         days=basket.getIntExtra("days",0);
         days-=48;
-        option=(CheckBox)findViewById(R.id.checkBox);
+        //option=(CheckBox)findViewById(R.id.checkBox);
 
         TextWatcher textWatcher = new TextWatcher() {
             @Override
@@ -147,7 +147,7 @@ public class SH_ChoiceStayActivity extends JU_TotalActivity implements View.OnCl
             if(state==1) {
                 Intent next = new Intent(SH_ChoiceStayActivity.this, SY_TouristActivity.class);
                 next.putExtra("throw", t_r);
-                next.putExtra("check", option.isChecked());
+                //next.putExtra("check", option.isChecked());
                 startActivity(next);
             }
             else{

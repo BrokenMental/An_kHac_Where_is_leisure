@@ -27,6 +27,13 @@ public class SY_TouristActivity extends JU_TotalActivity {
     CheckBox checkBox6;
     CheckBox checkBox7;
     CheckBox checkBox8;
+    CheckBox checkBox9;
+    CheckBox checkBox10;
+    CheckBox checkBox11;
+    CheckBox checkBox12;
+    CheckBox checkBox13;
+    CheckBox checkBox14;
+
     Button btnBack;
 
     /*앱이 실행됬을 때*/
@@ -52,6 +59,12 @@ public class SY_TouristActivity extends JU_TotalActivity {
         checkBox6 = (CheckBox) findViewById(R.id.chkBtn6);
         checkBox7 = (CheckBox) findViewById(R.id.chkBtn7);
         checkBox8 = (CheckBox) findViewById(R.id.chkBtn8);
+        checkBox9 = (CheckBox) findViewById(R.id.chkBtn9);
+        checkBox10 = (CheckBox) findViewById(R.id.chkBtn10);
+        checkBox11 = (CheckBox) findViewById(R.id.chkBtn11);
+        checkBox12 = (CheckBox) findViewById(R.id.chkBtn12);
+        checkBox13 = (CheckBox) findViewById(R.id.chkBtn13);
+        checkBox14 = (CheckBox) findViewById(R.id.chkBtn14);
     }
 
     /* 이미지 버튼을 클릭했을 때 -> 팝업*/
@@ -193,6 +206,108 @@ public class SY_TouristActivity extends JU_TotalActivity {
         }
     }
 
+    public void Popup9(View v) {
+        String tourName = "신양섭지 해수욕장";
+
+        Integer imgTour = R.drawable.sinyang;
+        String tourExplain = "섭지코지 가는 길, 멋진 풍경과 아늑한 바다에 빠지다.";
+        Integer imgOther1 = R.drawable.seoyeon;
+        String txtOther = "서연의 집: \n" +
+                "넓은 창 밖으로 바다가 보이는 카페. 건축학개론 촬영지로 더 유명한 카페. 납뜩이 머핀, 스토리텔링 떡 등 독특한 이름의 메뉴들이 인기 메뉴";
+        Integer imgOther2 = R.drawable.suguk;
+        String txtOther2 = "휴애리 여름 수국 축제: \n" +
+                "먹거리 - 솜사탕, 흑돼지빵, 소시지 \n" +
+                "상철체험프로그램 - 동물먹이주기체험(산토끼, 흑염소, 산양, 염소, 말 등), 흑돼지야놀자(흑돼지쇼), 승마체험, 야생화 자연 학습체험, 전통놀이체험(돌탑쌓기, 투호던지기, 굴렁쇠 체험 등)";
+        if (checkBox9.isChecked()) {
+            Popups(tourName, imgTour, tourExplain, imgOther1, txtOther, imgOther2, txtOther2);
+        }
+    }
+
+    public void Popup10(View v) {
+        String tourName = "섭지코지";
+
+        Integer imgTour = R.drawable.seobji;
+        String tourExplain = "아름다운 해안이 일품인 섭지";
+        Integer imgOther1 = R.drawable.seoyeon;
+        String txtOther = "서연의 집: \n" +
+                "넓은 창 밖으로 바다가 보이는 카페. 건축학개론 촬영지로 더 유명한 카페. 납뜩이 머핀, 스토리텔링 떡 등 독특한 이름의 메뉴들이 인기 메뉴";
+        Integer imgOther2 = R.drawable.suguk;
+        String txtOther2 = "휴애리 여름 수국 축제: \n" +
+                "먹거리 - 솜사탕, 흑돼지빵, 소시지 \n" +
+                "상철체험프로그램 - 동물먹이주기체험(산토끼, 흑염소, 산양, 염소, 말 등), 흑돼지야놀자(흑돼지쇼), 승마체험, 야생화 자연 학습체험, 전통놀이체험(돌탑쌓기, 투호던지기, 굴렁쇠 체험 등)";
+        if (checkBox10.isChecked()) {
+            Popups(tourName, imgTour, tourExplain, imgOther1, txtOther, imgOther2, txtOther2);
+        }
+    }
+
+    public void Popup11(View v) {
+        String tourName = "제주 아쿠아 플라넷";
+
+        Integer imgTour = R.drawable.akua;
+        String tourExplain = "450여종의 바다생명체가 있는 아시아 최대 수족관";
+        Integer imgOther1 = R.drawable.seoyeon;
+        String txtOther = "서연의 집: \n" +
+                "넓은 창 밖으로 바다가 보이는 카페. 건축학개론 촬영지로 더 유명한 카페. 납뜩이 머핀, 스토리텔링 떡 등 독특한 이름의 메뉴들이 인기 메뉴";
+        Integer imgOther2 = R.drawable.suguk;
+        String txtOther2 = "휴애리 여름 수국 축제: \n" +
+                "먹거리 - 솜사탕, 흑돼지빵, 소시지 \n" +
+                "상철체험프로그램 - 동물먹이주기체험(산토끼, 흑염소, 산양, 염소, 말 등), 흑돼지야놀자(흑돼지쇼), 승마체험, 야생화 자연 학습체험, 전통놀이체험(돌탑쌓기, 투호던지기, 굴렁쇠 체험 등)";
+        if (checkBox11.isChecked()) {
+            Popups(tourName, imgTour, tourExplain, imgOther1, txtOther, imgOther2, txtOther2);
+        }
+    }
+
+    public void Popup12(View v) {
+        String tourName = "알뜨르 비행장";
+
+        Integer imgTour = R.drawable.altteuleu;
+        String tourExplain = "아름답고 드넓은 벌판에서 일어났던 숨은 역사의 현장을 배우고 느껴보자";
+        Integer imgOther1 = R.drawable.seoyeon;
+        String txtOther = "서연의 집: \n" +
+                "넓은 창 밖으로 바다가 보이는 카페. 건축학개론 촬영지로 더 유명한 카페. 납뜩이 머핀, 스토리텔링 떡 등 독특한 이름의 메뉴들이 인기 메뉴";
+        Integer imgOther2 = R.drawable.suguk;
+        String txtOther2 = "휴애리 여름 수국 축제: \n" +
+                "먹거리 - 솜사탕, 흑돼지빵, 소시지 \n" +
+                "상철체험프로그램 - 동물먹이주기체험(산토끼, 흑염소, 산양, 염소, 말 등), 흑돼지야놀자(흑돼지쇼), 승마체험, 야생화 자연 학습체험, 전통놀이체험(돌탑쌓기, 투호던지기, 굴렁쇠 체험 등)";
+        if (checkBox12.isChecked()) {
+            Popups(tourName, imgTour, tourExplain, imgOther1, txtOther, imgOther2, txtOther2);
+        }
+    }
+
+    public void Popup13(View v) {
+        String tourName = "제주 곶자왈 도립공원";
+
+        Integer imgTour = R.drawable.gojjawal;
+        String tourExplain = "곶자왈의 생태와 휴양, 체험, 학습을 제공하는 생태관광지";
+        Integer imgOther1 = R.drawable.seoyeon;
+        String txtOther = "서연의 집: \n" +
+                "넓은 창 밖으로 바다가 보이는 카페. 건축학개론 촬영지로 더 유명한 카페. 납뜩이 머핀, 스토리텔링 떡 등 독특한 이름의 메뉴들이 인기 메뉴";
+        Integer imgOther2 = R.drawable.suguk;
+        String txtOther2 = "휴애리 여름 수국 축제: \n" +
+                "먹거리 - 솜사탕, 흑돼지빵, 소시지 \n" +
+                "상철체험프로그램 - 동물먹이주기체험(산토끼, 흑염소, 산양, 염소, 말 등), 흑돼지야놀자(흑돼지쇼), 승마체험, 야생화 자연 학습체험, 전통놀이체험(돌탑쌓기, 투호던지기, 굴렁쇠 체험 등)";
+        if (checkBox13.isChecked()) {
+            Popups(tourName, imgTour, tourExplain, imgOther1, txtOther, imgOther2, txtOther2);
+        }
+    }
+
+    public void Popup14(View v) {
+        String tourName = "섯알오름";
+
+        Integer imgTour = R.drawable.seosal;
+        String tourExplain = "역사의 아픔을 간직한곳";
+        Integer imgOther1 = R.drawable.seoyeon;
+        String txtOther = "서연의 집: \n" +
+                "넓은 창 밖으로 바다가 보이는 카페. 건축학개론 촬영지로 더 유명한 카페. 납뜩이 머핀, 스토리텔링 떡 등 독특한 이름의 메뉴들이 인기 메뉴";
+        Integer imgOther2 = R.drawable.suguk;
+        String txtOther2 = "휴애리 여름 수국 축제: \n" +
+                "먹거리 - 솜사탕, 흑돼지빵, 소시지 \n" +
+                "상철체험프로그램 - 동물먹이주기체험(산토끼, 흑염소, 산양, 염소, 말 등), 흑돼지야놀자(흑돼지쇼), 승마체험, 야생화 자연 학습체험, 전통놀이체험(돌탑쌓기, 투호던지기, 굴렁쇠 체험 등)";
+        if (checkBox14.isChecked()) {
+            Popups(tourName, imgTour, tourExplain, imgOther1, txtOther, imgOther2, txtOther2);
+        }
+    }
+
 
 
     public void Popups(String tourName, Integer imgTour, String tourExplain, Integer imgOther1, String txtOther, Integer imgOther2, String txtOther2) {
@@ -287,7 +402,36 @@ public class SY_TouristActivity extends JU_TotalActivity {
             /*Toast toast8 = Toast.makeText(getApplicationContext(), "선택한 관광지: " + checkBox8.getText(), Toast.LENGTH_SHORT);
             toast8.show();*/
             ReceiveArr.add(checkBox8.getText().toString());
-
+        }else if (checkBox9.isChecked()) {
+            count++;
+            /*Toast toast8 = Toast.makeText(getApplicationContext(), "선택한 관광지: " + checkBox8.getText(), Toast.LENGTH_SHORT);
+            toast8.show();*/
+            ReceiveArr.add(checkBox9.getText().toString());
+        }else if (checkBox10.isChecked()) {
+            count++;
+            /*Toast toast8 = Toast.makeText(getApplicationContext(), "선택한 관광지: " + checkBox8.getText(), Toast.LENGTH_SHORT);
+            toast8.show();*/
+            ReceiveArr.add(checkBox10.getText().toString());
+        }else if (checkBox11.isChecked()) {
+            count++;
+            /*Toast toast8 = Toast.makeText(getApplicationContext(), "선택한 관광지: " + checkBox8.getText(), Toast.LENGTH_SHORT);
+            toast8.show();*/
+            ReceiveArr.add(checkBox11.getText().toString());
+        }else if (checkBox12.isChecked()) {
+            count++;
+            /*Toast toast8 = Toast.makeText(getApplicationContext(), "선택한 관광지: " + checkBox8.getText(), Toast.LENGTH_SHORT);
+            toast8.show();*/
+            ReceiveArr.add(checkBox12.getText().toString());
+        }else if (checkBox13.isChecked()) {
+            count++;
+            /*Toast toast8 = Toast.makeText(getApplicationContext(), "선택한 관광지: " + checkBox8.getText(), Toast.LENGTH_SHORT);
+            toast8.show();*/
+            ReceiveArr.add(checkBox13.getText().toString());
+        }else if (checkBox14.isChecked()) {
+            count++;
+            /*Toast toast8 = Toast.makeText(getApplicationContext(), "선택한 관광지: " + checkBox8.getText(), Toast.LENGTH_SHORT);
+            toast8.show();*/
+            ReceiveArr.add(checkBox14.getText().toString());
         }
 
 

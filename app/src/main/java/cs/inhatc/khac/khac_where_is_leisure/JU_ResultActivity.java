@@ -26,16 +26,20 @@ import java.util.ArrayList;
 public class JU_ResultActivity extends JU_TotalActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
 
     private TMapPoint MapStart, MapEnd;
-    private TMapPoint tMapPoint1 = new TMapPoint(37.4588197, 126.63411719999999); // 인하대병원
-    private TMapPoint tMapPoint2 = new TMapPoint(37.4500221, 126.65348799999992); // 인하대
-    private TMapPoint tMapPoint3 = new TMapPoint(37.4480158, 126.65750409999998); // 인하공전
-    private TMapPoint tMapPoint4 = new TMapPoint(37.441546, 126.70149600000002); // 인천시외버스터미널
-    private TMapPoint tMapPoint5 = new TMapPoint(37.4565562, 126.68458069999997); // 주안역
-    private TMapPoint tMapPoint6 = new TMapPoint(37.5116833, 127.05910799999992); // 코엑스
-    private TMapPoint tMapPoint7 = new TMapPoint(37.5384272, 126.96544419999998); // 용산역
-    private TMapPoint tMapPoint8 = new TMapPoint(37.5318046, 126.91415469999993); // 국회의사당
-    private TMapPoint tMapPoint9 = new TMapPoint(37.557527, 126.92446689999997); // 홍대 입구역
-    private TMapPoint tMapPoint0 = new TMapPoint(37.55998, 126.98582959999999); // 명동
+    private TMapPoint tMapPoint01 = new TMapPoint(33.51041350000001, 126.49135339999998); // 제주공항
+    private TMapPoint tMapPoint02 = new TMapPoint(33.2815873, 126.27175950000003); // 제주곶자왈 도립공원
+    private TMapPoint tMapPoint03 = new TMapPoint(33.2052113, 126.27711550000004); // 알뜨르 비행장
+    private TMapPoint tMapPoint04 = new TMapPoint(33.2005211, 126.27703580000002); // 섯알오름
+    private TMapPoint tMapPoint05 = new TMapPoint(33.2383516, 126.22960379999995); // 숙소1
+
+    private TMapPoint tMapPoint06 = new TMapPoint(33.4363892, 126.92235900000003); // 신양섭지해수욕장
+    private TMapPoint tMapPoint07 = new TMapPoint(33.4235416, 126.92932659999997); // 섭지코지
+    private TMapPoint tMapPoint08 = new TMapPoint(33.4305782, 126.92776879999997); // 제주아쿠아플라넷
+    private TMapPoint tMapPoint09 = new TMapPoint(33.462389, 126.93671560000007); // 성산일출봉
+    private TMapPoint tMapPoint10 = new TMapPoint(33.4386194, 126.91651660000002); // 숙소2
+
+    private TMapPoint tMapPoint11 = new TMapPoint(33.451638, 126.49000000000001); // 러브랜드
+    private TMapPoint tMapPoint12 = new TMapPoint(33.4718397, 126.48494589999996); // 넥슨컴퓨터박물관
 
     private Button btnFinish, btnPreMap;
     private LinearLayout ResultTmap;
@@ -72,7 +76,7 @@ public class JU_ResultActivity extends JU_TotalActivity implements View.OnClickL
         ResultTmap = findViewById(R.id.ResultTmap);
         ResultTmap.addView(tMapView);
 
-        tMapView.setZoomLevel(12);
+        tMapView.setZoomLevel(10);
 
         // 스피너
         spday = findViewById(R.id.sp_daycho);
@@ -102,43 +106,61 @@ public class JU_ResultActivity extends JU_TotalActivity implements View.OnClickL
 
         // Permission 확인
         //PC = new JU_PermissionCall(this);
+
         switch (position){
             case 0 :
                 // 시작위치 설정
-                tMapView.setCenterPoint(126.63411719999999,37.4588197);
+                tMapView.setCenterPoint(126.49135339999998,33.51041350000001, true);
 
                 // 시작 종료 경로 설정
-                MapStart = tMapPoint1;
-                MapEnd = tMapPoint5;
+                MapStart = tMapPoint01;
+                MapEnd = tMapPoint05;
 
                 // 경유지 추가를 위한 ArrayList
                 passList = new ArrayList<>();
-                passList.add(tMapPoint2);
-                passList.add(tMapPoint3);
-                passList.add(tMapPoint4);
+                passList.add(tMapPoint02);
+                passList.add(tMapPoint03);
+                passList.add(tMapPoint04);
 
                 // 경로 검색 이벤트
                 findPathDataWithType();
-                txtChoStay.setText(spday.getSelectedItem().toString()+"숙박 : ");
+                txtChoStay.setText(spday.getSelectedItem().toString()+"숙박 : 별빛펜션");
                 break;
             case 1 :
                 // 시작위치 변경
-                tMapView.setCenterPoint(127.05910799999992, 37.5116833, true);
-                tMapView.setZoomLevel(11);
+                tMapView.setCenterPoint(126.22960379999995, 33.2383516, true);
 
                 // 시작 종료 경로 설정
-                MapStart = tMapPoint6;
-                MapEnd = tMapPoint0;
+                MapStart = tMapPoint05;
+                MapEnd = tMapPoint10;
 
                 // 경유지 추가를 위한 ArrayList
                 passList = new ArrayList<>();
-                passList.add(tMapPoint7);
-                passList.add(tMapPoint8);
-                passList.add(tMapPoint9);
+                passList.add(tMapPoint06);
+                passList.add(tMapPoint07);
+                passList.add(tMapPoint08);
+                passList.add(tMapPoint09);
 
                 // 경로 검색
                 findPathDataWithType();
-                txtChoStay.setText(spday.getSelectedItem().toString()+"숙박 : ");
+                txtChoStay.setText(spday.getSelectedItem().toString()+"숙박 : 별이 빛나는 밤");
+                break;
+            case 2 :
+                // 시작위치 변경
+                tMapView.setCenterPoint(126.91651660000002, 33.4386194, true);
+
+                // 시작 종료 경로 설정
+                MapStart = tMapPoint10;
+                MapEnd = tMapPoint01;
+
+                // 경유지 추가를 위한 ArrayList
+                passList = new ArrayList<>();
+                passList.add(tMapPoint11);
+                passList.add(tMapPoint12);
+
+                // 경로 검색
+                findPathDataWithType();
+                txtChoStay.setText(spday.getSelectedItem().toString()+"숙박 : 없음");
                 break;
             default :
                 break;
@@ -152,7 +174,7 @@ public class JU_ResultActivity extends JU_TotalActivity implements View.OnClickL
 
     // 경로찾기 메서드
     public void findPathDataWithType() {
-        tMapData.findPathDataWithType(TMapData.TMapPathType.CAR_PATH, MapStart, MapEnd, passList, 0,
+        tMapData.findPathDataWithType(TMapData.TMapPathType.CAR_PATH, MapStart, MapEnd, passList, 2,
                 new TMapData.FindPathDataListenerCallback() {
                     @Override
                     public void onFindPathData(TMapPolyLine polyLine) {
@@ -166,7 +188,7 @@ public class JU_ResultActivity extends JU_TotalActivity implements View.OnClickL
 
     // Type별 경로 거리
     public void findPathAllType() {
-        tMapData.findPathDataAllType(TMapData.TMapPathType.CAR_PATH, tMapPoint1, tMapPoint5, new TMapData.FindPathDataAllListenerCallback() {
+        tMapData.findPathDataAllType(TMapData.TMapPathType.CAR_PATH, MapStart, MapEnd, new TMapData.FindPathDataAllListenerCallback() {
             @Override
             public void onFindPathDataAll(Document document) {
                 Element root = document.getDocumentElement();

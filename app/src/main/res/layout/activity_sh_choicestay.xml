@@ -4,14 +4,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F0F0F0"
     tools:context=".SH_ChoiceStayActivity">
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="324dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageView"
+        android:layout_marginTop="6dp"
+        app:srcCompat="@drawable/backwhite_sh2" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="match_parent"
+        android:layout_height="186dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/imageView3"
+        android:layout_marginTop="9dp"
+        app:srcCompat="@drawable/backwhite_sh" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="352dp"
+        android:layout_height="1dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="131dp"
+        android:background="#D7D7D7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.381" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="352dp"
+        android:layout_height="1dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="252dp"
+        android:background="#D7D7D7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.381" />
+
     <TextView
-        android:id="@+id/area"
+        android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textView10"
-        android:layout_below="@+id/textView10"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="101dp"
+        android:layout_toEndOf="@+id/day"
         android:text="제주특별시"
         android:textColor="#585858"
         android:textSize="11dp"
@@ -23,14 +73,15 @@
         app:layout_constraintVertical_bias="0.175" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/textView11"
         android:layout_width="wrap_content"
-        android:layout_height="17dp"
-        android:layout_alignStart="@+id/textView6"
-        android:layout_below="@+id/imageView"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView10"
+        android:layout_alignEnd="@+id/day"
         android:text="숙소선택"
         android:textColor="#000000"
-        android:textSize="15dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -41,12 +92,14 @@
 
     <Button
         android:id="@+id/next"
-        android:layout_width="328dp"
-        android:layout_height="wrap_content"
+        android:layout_width="342dp"
+        android:layout_height="36dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="19dp"
-        android:text="다음"
+        android:background="#6EABBE"
+        android:text="다음으로 >"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.945"
@@ -57,39 +110,47 @@
 
     <Button
         android:id="@+id/pre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/next"
+        android:layout_width="63dp"
+        android:layout_height="43dp"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="16dp"
+        android:background="#6EABBE"
         android:text="이전"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintHorizontal_bias="0.954"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.025" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="210dp"
-        android:layout_height="61dp"
+        android:layout_width="160dp"
+        android:layout_height="55dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="3dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.015"
         app:srcCompat="@drawable/logo" />
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="181dp"
-        android:layout_height="49dp"
-        android:layout_alignEnd="@+id/imageView"
-        android:layout_alignTop="@+id/days"
+        android:layout_width="148dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/list"
+        android:layout_marginTop="160dp"
         android:text="선택한 일정 :"
-        android:textSize="30dp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.239"
@@ -102,13 +163,11 @@
     <TextView
         android:id="@+id/days"
         android:layout_width="134dp"
-        android:layout_height="52dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="52dp"
-        android:layout_marginTop="124dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView6"
+        android:layout_toEndOf="@+id/textView6"
         android:text=""
-        android:textSize="30dp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.866"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -118,12 +177,14 @@
 
     <TextView
         android:id="@+id/day"
-        android:layout_width="82dp"
+        android:layout_width="65dp"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/lodging"
-        android:layout_alignStart="@+id/next"
+        android:layout_alignStart="@+id/textView6"
+        android:layout_marginStart="17dp"
         android:text="1번째 날"
-        android:textSize="20dp"
+        android:hint="이곳을 선택해 숙소를 검색 하세요."
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.047"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -133,7 +194,7 @@
     <EditText
         android:id="@+id/lodging"
         android:layout_width="236dp"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/next"
         android:layout_alignParentTop="true"
         android:layout_marginTop="282dp"
@@ -151,11 +212,11 @@
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="244dp"
-        android:layout_height="43dp"
+        android:layout_width="236dp"
+        android:layout_height="39dp"
+        android:layout_alignEnd="@+id/next"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/lodging"
-        android:layout_marginBottom="261dp"
+        android:layout_marginBottom="280dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -166,13 +227,13 @@
 
     <TextView
         android:id="@+id/sukbak"
-        android:layout_width="84dp"
+        android:layout_width="64dp"
         android:layout_height="24dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/next"
-        android:layout_marginBottom="272dp"
+        android:layout_alignStart="@+id/day"
+        android:layout_marginBottom="288dp"
         android:text="숙박일수"
-        android:textSize="20dp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -184,10 +245,9 @@
     <TextView
         android:id="@+id/list"
         android:layout_width="302dp"
-        android:layout_height="149dp"
-        android:layout_alignParentBottom="true"
+        android:layout_height="168dp"
+        android:layout_alignBottom="@+id/imageView5"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="82dp"
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -198,32 +258,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.866" />
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="108dp"
-        android:background="?android:attr/listDivider" />
-
-    <View
-        android:id="@+id/divider2"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="246dp"
-        android:background="?android:attr/listDivider" />
-
     <TextView
-        android:id="@+id/txtView_help"
-        android:layout_width="295dp"
+        android:id="@+id/textView8"
+        android:layout_width="265dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/area"
-        android:layout_marginTop="214dp"
-        android:text="숙소는 도착지로 고정됩니다."
-        android:textSize="15dp" />
+        android:layout_alignStart="@+id/textView6"
+        android:layout_marginTop="217dp"
+        android:text="숙소는 목적지로 설정됩니다." />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView6"
+        android:layout_below="@+id/imageView3"
+        android:text="선택 확인" />
 
 </RelativeLayout>

@@ -36,16 +36,15 @@ public class JU_MapActivity extends JU_TotalActivity implements View.OnClickList
 
     private TMapPoint MapStart, MapEnd;
     private TMapPoint tMapPoint01 = new TMapPoint(33.51041350000001, 126.49135339999998); // 제주공항
-    private TMapPoint tMapPoint02 = new TMapPoint(33.2044378, 126.27170560000002); // 알뜨르 비행장
-    private TMapPoint tMapPoint03 = new TMapPoint(33.2907712, 126.2737952); // 제주곶자왈 도립공원
-    private TMapPoint tMapPoint04 = new TMapPoint(33.2042357, 126.28167600000006); // 섯알오름
-    private TMapPoint tMapPoint05 = new TMapPoint(33.2123962, 126.25913530000003); // 숙소1
+    private TMapPoint tMapPoint02 = new TMapPoint(33.2815873, 126.27175950000003); // 제주곶자왈 도립공원
+    private TMapPoint tMapPoint03 = new TMapPoint(33.2052113, 126.27711550000004); // 알뜨르 비행장
+    private TMapPoint tMapPoint04 = new TMapPoint(33.2005211, 126.27703580000002); // 섯알오름
+    private TMapPoint tMapPoint05 = new TMapPoint(33.2383516, 126.22960379999995); // 숙소1
 
-
-    private TMapPoint tMapPoint06 = new TMapPoint(33.4349997, 126.92316349999999); // 신양섭지해수욕장
+    private TMapPoint tMapPoint06 = new TMapPoint(33.4363892, 126.92235900000003); // 신양섭지해수욕장
     private TMapPoint tMapPoint07 = new TMapPoint(33.4235416, 126.92932659999997); // 섭지코지
-    private TMapPoint tMapPoint08 = new TMapPoint(33.4327935, 126.92791009999996); // 제주아쿠아플라넷
-    private TMapPoint tMapPoint09 = new TMapPoint(33.45805600000001, 126.9425); // 성산일출봉
+    private TMapPoint tMapPoint08 = new TMapPoint(33.4305782, 126.92776879999997); // 제주아쿠아플라넷
+    private TMapPoint tMapPoint09 = new TMapPoint(33.462389, 126.93671560000007); // 성산일출봉
     private TMapPoint tMapPoint10 = new TMapPoint(33.4386194, 126.91651660000002); // 숙소2
 
     private TMapPoint tMapPoint11 = new TMapPoint(33.451638, 126.49000000000001); // 러브랜드
@@ -81,7 +80,7 @@ public class JU_MapActivity extends JU_TotalActivity implements View.OnClickList
         linearLayoutTmap = findViewById(R.id.linearLayoutTmap);
         linearLayoutTmap.addView(tMapView);
 
-        tMapView.setZoomLevel(12);
+        tMapView.setZoomLevel(10);
 
         // 스피너
         spday = findViewById(R.id.sp_day);
@@ -116,7 +115,7 @@ public class JU_MapActivity extends JU_TotalActivity implements View.OnClickList
         switch (position){
             case 0 :
                 // 시작위치 설정
-                tMapView.setCenterPoint(126.63411719999999,37.4588197, true);
+                tMapView.setCenterPoint(126.49135339999998,33.51041350000001, true);
 
                 // 시작 종료 경로 설정
                 MapStart = tMapPoint01;
@@ -133,8 +132,7 @@ public class JU_MapActivity extends JU_TotalActivity implements View.OnClickList
                 break;
             case 1 :
                 // 시작위치 변경
-                tMapView.setCenterPoint(127.05910799999992, 37.5116833, true);
-                tMapView.setZoomLevel(11);
+                tMapView.setCenterPoint(126.22960379999995, 33.2383516, true);
 
                 // 시작 종료 경로 설정
                 MapStart = tMapPoint05;
@@ -152,8 +150,7 @@ public class JU_MapActivity extends JU_TotalActivity implements View.OnClickList
                 break;
             case 2 :
                 // 시작위치 변경
-                tMapView.setCenterPoint(127.05910799999992, 37.5116833, true);
-                tMapView.setZoomLevel(11);
+                tMapView.setCenterPoint(126.91651660000002, 33.4386194, true);
 
                 // 시작 종료 경로 설정
                 MapStart = tMapPoint10;
@@ -179,7 +176,7 @@ public class JU_MapActivity extends JU_TotalActivity implements View.OnClickList
 
     // 경로찾기 메서드
     public void findPathDataWithType() {
-        tMapData.findPathDataWithType(TMapData.TMapPathType.CAR_PATH, MapStart, MapEnd, passList, 0,
+        tMapData.findPathDataWithType(TMapData.TMapPathType.CAR_PATH, MapStart, MapEnd, passList, 2,
                 new TMapData.FindPathDataListenerCallback() {
                     @Override
                     public void onFindPathData(TMapPolyLine polyLine) {
