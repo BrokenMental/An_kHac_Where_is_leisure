@@ -53,19 +53,20 @@ public class SH_Stayintent extends AppCompatActivity implements View.OnClickList
                     second.setVisibility(View.VISIBLE);
                     third.setVisibility(View.VISIBLE);
                     forth.setVisibility(View.INVISIBLE);
-                    first.setText("별빛펜션\n주소 : 충청북도 충주시 매현읍");
-                    second.setText("별이 빛나는 방\n주소 : 부산광역시 해운대구");
-                    third.setText("별빛나라\n주소 : 강원도 가평");
+
+                    first.setText("별빛펜션\n주소 : 제주도 제주시 애월읍");
+                    second.setText("별이 빛나는 방\n주소 : 제주도 제주시 탑동해안로");
+                    third.setText("별빛나라\n주소 : 제주도 제주시 서해안로");
                 } else if (search.getText().toString().equals("해변")) {
                     first.setVisibility(View.VISIBLE);
                     second.setVisibility(View.VISIBLE);
                     third.setVisibility(View.VISIBLE);
                     forth.setVisibility(View.VISIBLE);
 
-                    first.setText("비치해변\n주소 : 인천광역시 을왕리");
-                    second.setText("해변발리\n주소 : 강원도 양양");
-                    third.setText("반짝해변펜션\n주소 : 제주도 애월읍");
-                    forth.setText("감자해변\n주소 : 강원도 속초");
+                    first.setText("비치해변\n주소 : 제주도 서귀포시 성산읍");
+                    second.setText("해변발리\n주소 : 제주도 서귀포시 대정읍");
+                    third.setText("반짝해변펜션\n주소 : 제주도 제주시 애월읍");
+                    forth.setText("감자해변\n주소 : 제주도 서귀포시 속골로");
                 }
             }
         };

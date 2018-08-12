@@ -35,22 +35,22 @@ public class AY_AfterTrip extends AppCompatActivity implements View.OnClickListe
         listview.setAdapter(adapter);
 
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.beachload),
-                "죽도 해안 산책로", "경상북도 / 울릉군 ulleng\r\n 해안따라 들리는 바다소리가 너무 이뻤어요~!\r\n");
+                "경상도 / 울릉군 / 2박3일", "죽도 해안 산책로 \r\n경치가 예뻤던 코스였어요\r\n");
 
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ecoland),
-                "에코랜드", "제주도 / 조천읍 jejudo \r\n한번 더 타고싶다~");
+                "제주도 / 조천읍 / 3박4일", "에코랜드 \r\n제주도 여행 정말 재밌었어요~");
 
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.hanrasumok),
-                "인천 수목원", "인천 / 남동구 inchen \r\n데이트 장소로도 딱이에요");
+                "인천 / 남동구 / 1박 2일", "인천 수목원 \r\n데이트 장소로도 딱이에요");
 
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.loveland),
-                "러브랜드", "제주도 / 제주시 jejudo \r\n!!청소년 출입금지!!");
+                "제주도 / 제주시 / 2박 3일", "러브랜드 \r\n알찼던 제주도 여행!!");
 
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.oramemil),
-                "메밀꽃밭", "강원도 / 춘천시 gangwon \r\n메밀꽃이 만발할때 갔더니 환상적이었어요");
+                "강원도 / 춘천시 / 3박 4일", "메밀꽃밭 \r\n친구들끼리 신나게 다녀왔습니다");
 
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.swiss),
-                "스위스 마을", "제주도 /조천읍 jejudo \r\n스위스 풍의 아기자기한 분위기가 사진찍기 딱좋아요!");
+                "제주도 / 조천읍 / 4박 5일", "스위스 마을 \r\n~느긋한 힐링 여행 추천~");
 
 
         EditText editTextFilter = (EditText)findViewById(R.id.editTextFilter) ;
