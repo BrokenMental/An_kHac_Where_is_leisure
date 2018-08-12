@@ -36,6 +36,7 @@
         android:layout_height="36dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
         android:background="#6EABBE"
         android:text="다음"
         android:textColor="#FFFFFF" />
@@ -43,7 +44,7 @@
     <LinearLayout
         android:id="@+id/linearLayoutTmap"
         android:layout_width="match_parent"
-        android:layout_height="494dp"
+        android:layout_height="483dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="116dp"
