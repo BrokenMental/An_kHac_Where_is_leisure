@@ -9,12 +9,13 @@
 + 결선탈락 사유 : 기존에 존재하는 비슷한 앱들이 너무 많다고 함...(?)
 
 # 이미지
-<img src = "https://github.com/BrokenMental/Android_kHac-Where-is-leisure/blob/master/readme_img/1.png?raw=true">
-<img src = "https://github.com/BrokenMental/Android_kHac-Where-is-leisure/blob/master/readme_img/2.png?raw=true">
-<img src = "https://github.com/BrokenMental/Android_kHac-Where-is-leisure/blob/master/readme_img/3.png?raw=true">
-<img src = "https://github.com/BrokenMental/Android_kHac-Where-is-leisure/blob/master/readme_img/4.png?raw=true">
-<img src = "https://github.com/BrokenMental/Android_kHac-Where-is-leisure/blob/master/readme_img/5.png?raw=true">
-
+<div style="display:flex">
+  <img src = "https://github.com/BrokenMental/Android_kHac-Where-is-leisure/blob/master/readme_img/1.png?raw=true">
+  <img src = "https://github.com/BrokenMental/Android_kHac-Where-is-leisure/blob/master/readme_img/2.png?raw=true">
+  <img src = "https://github.com/BrokenMental/Android_kHac-Where-is-leisure/blob/master/readme_img/3.png?raw=true">
+  <img src = "https://github.com/BrokenMental/Android_kHac-Where-is-leisure/blob/master/readme_img/4.png?raw=true">
+  <img src = "https://github.com/BrokenMental/Android_kHac-Where-is-leisure/blob/master/readme_img/5.png?raw=true">
+</div>
 
 # 개발 환경
 1. Adroid 8.0, SDK level 26
