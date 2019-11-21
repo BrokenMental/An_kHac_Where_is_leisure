@@ -22,8 +22,8 @@
 1. Adroid 8.0, SDK level 26
 2. Java Ver : jdk 1.8
 
-# 활용 지도 : Daum Map > Naver Map > Google Map > T-map
-1. T-map 적용(완료)
+# 활용 지도 : T-map
+1. Daum Map > Naver Map > Google Map > T-map 적용(완료)
 2. 경로 탐색 api를 제공하는 T-map 을 최종적으로 확정
 
 # 위치 선정 : 제주도
