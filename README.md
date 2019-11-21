@@ -8,6 +8,14 @@
 - 개발 목적 : 숙소 찾고, 관광지 찾고, 먹거리 찾고, 이동경로 짜고... 이 짜증나고 번거로운 모든것들을 한번에 효율적으로 해결 할수 있는 앱
 + 결선탈락 사유 : 기존에 존재하는 비슷한 앱들이 너무 많다고 함...(?)
 
+# 이미지
+<img src = "https://github.com/BrokenMental/Android_kHac-Where-is-leisure/blob/master/readme_img/1.png?raw=true">
+<img src = "https://github.com/BrokenMental/Android_kHac-Where-is-leisure/blob/master/readme_img/2.png?raw=true">
+<img src = "https://github.com/BrokenMental/Android_kHac-Where-is-leisure/blob/master/readme_img/3.png?raw=true">
+<img src = "https://github.com/BrokenMental/Android_kHac-Where-is-leisure/blob/master/readme_img/4.png?raw=true">
+<img src = "https://github.com/BrokenMental/Android_kHac-Where-is-leisure/blob/master/readme_img/5.png?raw=true">
+
+
 # 개발 환경
 1. Adroid 8.0, SDK level 26
 2. Java Ver : jdk 1.8
