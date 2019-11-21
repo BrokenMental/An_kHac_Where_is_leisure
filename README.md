@@ -12,10 +12,10 @@
 # 이미지
 <img src = "https://github.com/BrokenMental/Android_kHac-Where-is-leisure/blob/master/readme_img/1.png?raw=true" width="500px">
 <div style="display:flex">
-  <img src = "https://github.com/BrokenMental/Android_kHac-Where-is-leisure/blob/master/readme_img/2.png?raw=true" width="22%">
-  <img src = "https://github.com/BrokenMental/Android_kHac-Where-is-leisure/blob/master/readme_img/3.png?raw=true" width="22%">
-  <img src = "https://github.com/BrokenMental/Android_kHac-Where-is-leisure/blob/master/readme_img/4.png?raw=true" width="22%">
-  <img src = "https://github.com/BrokenMental/Android_kHac-Where-is-leisure/blob/master/readme_img/5.png?raw=true" width="22%">
+  <img src = "https://github.com/BrokenMental/Android_kHac-Where-is-leisure/blob/master/readme_img/2.png?raw=true" width="25%">
+  <img src = "https://github.com/BrokenMental/Android_kHac-Where-is-leisure/blob/master/readme_img/3.png?raw=true" width="23%">
+  <img src = "https://github.com/BrokenMental/Android_kHac-Where-is-leisure/blob/master/readme_img/4.png?raw=true" width="20%">
+  <img src = "https://github.com/BrokenMental/Android_kHac-Where-is-leisure/blob/master/readme_img/5.png?raw=true" width="18%">
 </div>
 
 # 개발 환경
